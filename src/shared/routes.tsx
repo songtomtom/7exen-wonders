@@ -14,14 +14,14 @@ const waitFor = (Tag: React.LazyExoticComponent<any>) => (props: any) => (
   <Tag {...props} />
 );
 
-const Viewer = lazy(() => import('../containers/viewer'));
+const Main = lazy(() => import('../pages/main'));
 
 function Routes({ location }: RouteProps) {
   return (
     <Wrapper>
       <Suspense fallback={<PageLoader />}>
         <Switch location={location}>
-          <Route path="/" component={waitFor(Viewer)} />
+          <Route path="/" component={waitFor(Main)} />
 
           <Redirect to="/" />
         </Switch>

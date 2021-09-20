@@ -9,13 +9,10 @@ import 'raf/polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider as ReduxProvider } from 'react-redux';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import App from './app';
-import configureStore from './store/store';
 
-const store = configureStore();
 const client = new ApolloClient({
   uri:
     process.env.NODE_ENV === 'production'
@@ -27,10 +24,8 @@ const client = new ApolloClient({
 const appElement = document.getElementById('app');
 
 ReactDOM.render(
-  <ReduxProvider store={store}>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </ReduxProvider>,
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
   appElement
 );
