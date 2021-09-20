@@ -1,9 +1,9 @@
 import React from 'react';
-import { Progress } from 'reactstrap';
+import { Container, Progress } from 'reactstrap';
 
 function Topnav() {
   return (
-    <div className="topnav">
+    <Container className="topnav" fluid>
       <h1>
         <strong>7EXEN</strong>WONDERS
       </h1>
@@ -17,7 +17,7 @@ function Topnav() {
         <Progress bar color="7grey" value="15" />
         <Progress bar color="7brown" value="15" />
       </Progress>
-    </div>
+    </Container>
   );
 }
 

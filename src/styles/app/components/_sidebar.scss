@@ -1,6 +1,7 @@
 .sidebar {
   background-color: $bg-sidebar;
   height: 100%;
+  // height: calc(100% - #{$topnav-hg});
   // margin-top: 8px;
 
   .list-group {

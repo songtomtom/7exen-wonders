@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
 html {
   margin: 0;
   padding: 0;
 }
 
 body {
-  height: 100%;
-  width: 100%;
   font-family: 'Montserrat', sans-serif;
   color: $text-secondary;
+  background-color: $bg-wrapper;
+}
+
+body,
+html,
+#app {
+  height: 100%;
 }
 
 a:hover {
   cursor: pointer;
+}
+
+.container,
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .bg-7blue {

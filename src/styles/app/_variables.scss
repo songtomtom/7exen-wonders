@@ -9,9 +9,11 @@ $yellow: #fce883 !default;
 $white: #ffffff !default;
 $primary: #031c32;
 
-$bg-wrapper: #ededed;
+$bg-wrapper: $white;
 $bg-topnav: #031c32;
-$bg-sidebar: $white;
+$bg-sidebar: #ededed;
 
 $text-primary: $primary;
 $text-secondary: $white;
+
+$topnav-hg: 104px;

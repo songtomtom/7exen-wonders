@@ -1,3 +1,8 @@
 .wrapper {
-  background-color: $bg-wrapper;
+  height: 100%;
+
+  .contents {
+    height: 100%;
+    padding-top: 20px;
+  }
 }

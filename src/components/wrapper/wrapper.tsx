@@ -10,18 +10,16 @@ interface WrapperProps extends React.HTMLAttributes<HTMLElement> {
 
 function Wrapper({ children }: WrapperProps) {
   return (
-    <div className="wrapper">
+    <Container className="wrapper" fluid>
       <Topnav />
 
-      <Container fluid>
-        <Row>
-          <Col className="m-0 p-0" sm={2}>
-            <Sidebar />
-          </Col>
-          <Col>{children}</Col>
-        </Row>
-      </Container>
-    </div>
+      <Row className="h-100">
+        <Col sm={3}>
+          <Sidebar />
+        </Col>
+        <Col className="contents">{children}</Col>
+      </Row>
+    </Container>
   );
 }
 

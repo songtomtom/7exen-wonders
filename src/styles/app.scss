@@ -4,10 +4,10 @@
  * - Variablers
  * - Html, Body, App
  */
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/bootstrap.scss';
 
-@import 'app/common/variables';
-@import 'app/common/index';
+@import 'app/variables';
+@import 'app/index';
 
 /**
  * Components
@@ -15,3 +15,8 @@
 @import 'app/components/wrapper';
 @import 'app/components/topnav';
 @import 'app/components/sidebar';
+
+/**
+ * Pages
+ */
+@import 'app/pages/counting';

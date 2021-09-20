@@ -1,9 +1,9 @@
 import React from 'react';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem } from 'reactstrap';
 
 function Sidebar() {
   return (
-    <div className="sidebar">
+    <Container className="sidebar">
       <ListGroup>
         <ListGroupItem active tag="a" href="#" action>
           <i className="fas fa-th-list" />
@@ -14,7 +14,7 @@ function Sidebar() {
           Season Ranking
         </ListGroupItem>
       </ListGroup>
-    </div>
+    </Container>
   );
 }
 
