@@ -1,0 +1,53 @@
+.topnav {
+  // border-bottom: 1px solid #d9d9d9;
+  background-color: #2b3140;
+  // box-shadow: 0 0 10px #d9d9d9;
+  height: 100%;
+
+  .topnav-menu {
+    // height: inherit;
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+
+    .topnav-hamberg {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .topnav-headline {
+      margin: 0;
+      padding: 0.9rem 3rem;
+
+      .headline {
+        line-height: 2.5rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        > span:nth-child(2) {
+          opacity: 0.4;
+        }
+      }
+    }
+
+    .tapnav-buttons {
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+
+    .topnav-auth {
+      // width: auto;
+      margin-top: 20px;
+      margin-right: 20px;
+      margin-left: 0;
+      // float: right;
+    }
+  }
+
+  .topnav-progress {
+    > .progress {
+      height: 1rem;
+      border-radius: 0;
+    }
+  }
+}
