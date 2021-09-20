@@ -1,97 +1,148 @@
-import React from 'react';
-import {
-  Col,
-  Container,
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  Row,
-  Table
-} from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+import { Col, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import { CountCategory } from '../shared/enum';
+import Players from '../shared/players';
 
-interface ICountTables {
+interface IVictoryPoint {
   category: CountCategory;
   name: string;
-  color?: string;
+  iconClass: string;
 }
 
-const countTables: Array<ICountTables> = [
+const VictoryPoint: Array<IVictoryPoint> = [
   {
     category: CountCategory.WONDERS,
-    name: 'Wonders Board'
+    name: 'Wonders',
+    iconClass: 'fas fa-landmark text-secondary'
   },
   {
     category: CountCategory.TREASURE,
-    name: 'Treasure'
+    name: 'Treasure',
+    iconClass: 'fas fa-coins text-warning'
   },
   {
     category: CountCategory.MILITARY,
-    name: 'Military Conflicts'
+    name: 'Military',
+    iconClass: 'fas fa-chess-knight text-7red'
   },
   {
     category: CountCategory.BLUE,
-    name: 'Blue Cards',
-    color: ''
+    name: 'Civil',
+    iconClass: 'fas fa-file text-7blue'
   },
   {
     category: CountCategory.YELLOW,
-    name: 'Yellow Cards',
-    color: ''
+    name: 'Commercial',
+    iconClass: 'fas fa-file text-7yellow'
   },
   {
     category: CountCategory.GREEN,
-    name: 'Green Cards',
-    color: ''
+    name: 'Science',
+    iconClass: 'fas fa-file text-7green'
   },
   {
     category: CountCategory.PURPLE,
-    name: 'Purple Cards',
-    color: ''
+    name: 'Guilds',
+    iconClass: 'fas fa-file text-7purple'
   },
   {
     category: CountCategory.LEADERS,
-    name: 'Leaders Cards',
-    color: ''
+    name: 'Leaders',
+    iconClass: 'fas fa-grin-stars text-secondary'
   },
   {
     category: CountCategory.CITIES,
-    name: 'Cities Cards',
-    color: ''
+    name: 'Cities',
+    iconClass: 'fas fa-building'
   },
   {
     category: CountCategory.NAVAL,
-    name: 'Naval Conflicts'
+    name: 'Naval',
+    iconClass: 'fas fa-anchor text-info'
   },
   {
     category: CountCategory.ISLAND,
-    name: 'Island Cards'
+    name: 'Island',
+    iconClass: 'fab fa-docker text-info'
   }
 ];
 
 function Counting() {
-  const player = [{ name: 'Tom' }, { name: 'Yoon' }, { name: 'Kim' }];
+  const [score, setScore] = useState<Array<Array<number>>>(
+    Players.map(() => VictoryPoint.map(() => 0))
+  );
+
+  const [totalScore, setTotalScore] = useState<Array<number>>(
+    Players.map(() => 0)
+  );
+
+  useEffect(() => {
+    const totalScore = score.map((item) => {
+      return item.reduce(
+        (previousValue, currentValue) => previousValue + currentValue
+      );
+    });
+    setTotalScore([...totalScore]);
+  }, [JSON.stringify(score)]);
 
   return (
     <Container className="counting">
       <Form>
-        {countTables.map((item) => {
+        <FormGroup row>
+          <Col sm={3} />
+          {Players.map((item, index) => {
+            return (
+              <Col sm={3} key={index}>
+                <i className="fas fa-chess-pawn" />
+                {item.name}
+              </Col>
+            );
+          })}
+        </FormGroup>
+        <hr />
+
+        {VictoryPoint.map((item, index) => {
           return (
-            <FormGroup row>
-              <Label sm={3}>{item.name}</Label>
-              <Col sm={3}>
-                <Input inli type="number" name="email" id="exampleEmail" />
-              </Col>
-              <Col sm={3}>
-                <Input inli type="number" name="email" id="exampleEmail" />
-              </Col>
-              <Col sm={3}>
-                <Input inli type="number" name="email" id="exampleEmail" />
-              </Col>
+            <FormGroup key={index} row>
+              <Label sm={3}>
+                <i className={item.iconClass} />
+                {item.name}
+              </Label>
+              {Players.map((subitem, subindex) => {
+                return (
+                  <Col key={subindex} sm={3}>
+                    <Input
+                      type="number"
+                      defaultValue={0}
+                      onChange={(e) => {
+                        score[subindex][index] = Number(e.target.value);
+                        setScore([...score]);
+                      }}
+                      onFocus={(e) => {
+                        e.target.select();
+                      }}
+                    />
+                  </Col>
+                );
+              })}
             </FormGroup>
           );
         })}
+
+        <hr />
+
+        <FormGroup row>
+          <Col sm={3}>
+            <i className="fas fa-plus" /> <strong>Total Victory Point</strong>
+          </Col>
+          {totalScore.map((item, index) => {
+            return (
+              <Col key={index} sm={3}>
+                <strong>{item}</strong>
+              </Col>
+            );
+          })}
+        </FormGroup>
       </Form>
     </Container>
   );

@@ -5,7 +5,7 @@ function Topnav() {
   return (
     <Container className="topnav" fluid>
       <h1>
-        <strong>7EXEN</strong>WONDERS
+        <strong>7EXEN</strong>WONDERS<small> create by tom</small>
       </h1>
 
       <Progress multi>
