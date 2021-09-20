@@ -4,9 +4,11 @@
  * - Variablers
  * - Html, Body, App
  */
-@import 'app/common/color';
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import 'app/common/variables';
 @import 'app/common/index';
-@import 'app/common/text';
 
 /**
  * Components

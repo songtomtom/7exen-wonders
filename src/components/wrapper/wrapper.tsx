@@ -15,7 +15,7 @@ function Wrapper({ children }: WrapperProps) {
 
       <Container fluid>
         <Row>
-          <Col className="m-0 p-0" sm={3}>
+          <Col className="m-0 p-0" sm={2}>
             <Sidebar />
           </Col>
           <Col>{children}</Col>

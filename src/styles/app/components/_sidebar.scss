@@ -1,6 +1,7 @@
 .sidebar {
   background-color: #2b3140;
   height: 100%;
+  // margin-top: 8px;
 
   .list-group {
     border-radius: 0%;
@@ -12,6 +13,10 @@
       // &.active {
       //   border-color: transparent;
       // }
+
+      i {
+        margin-right: 10px;
+      }
     }
   }
 }

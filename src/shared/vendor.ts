@@ -1,9 +1,4 @@
 /**
- * Bootstrap
- */
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-/**
  * Fontawesome
  */
 import '@fortawesome/fontawesome-free/css/brands.css';
