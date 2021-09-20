@@ -13,15 +13,6 @@ function Sidebar() {
           <i className="fas fa-trophy" />
           Season Ranking
         </ListGroupItem>
-        <ListGroupItem tag="a" href="#" action>
-          Morbi leo risus
-        </ListGroupItem>
-        <ListGroupItem tag="a" href="#" action>
-          Porta ac consectetur ac
-        </ListGroupItem>
-        <ListGroupItem disabled tag="a" href="#" action>
-          Vestibulum at eros
-        </ListGroupItem>
       </ListGroup>
     </div>
   );

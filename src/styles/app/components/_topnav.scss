@@ -1,11 +1,24 @@
 .topnav {
   // border-bottom: 1px solid #d9d9d9;
-  background-color: #ffffff;
+  // background-color: #005f40;
+  background-color: $bg-topnav;
   box-shadow: 0 0 10px #d9d9d9;
   height: 100%;
+  color: $text-secondary;
+
+  h1 {
+    padding: 20px;
+    font-weight: 100;
+
+    strong {
+      font-weight: 900;
+    }
+  }
+
   // color: #ffffff;
 
   > .progress {
     border-radius: 0;
+    height: 0.5rem;
   }
 }

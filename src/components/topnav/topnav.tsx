@@ -4,7 +4,10 @@ import { Progress } from 'reactstrap';
 function Topnav() {
   return (
     <div className="topnav">
-      <h1>7exen Wonders</h1>
+      <h1>
+        <strong>7EXEN</strong>WONDERS
+      </h1>
+
       <Progress multi>
         <Progress className="7blue" bar value="15" />
         <Progress bar color="7green" value="15" />

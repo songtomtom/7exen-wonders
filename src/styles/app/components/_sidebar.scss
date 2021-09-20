@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: #2b3140;
+  background-color: $bg-sidebar;
   height: 100%;
   // margin-top: 8px;
 
@@ -10,9 +10,20 @@
       background-color: transparent;
       border-color: transparent;
 
-      // &.active {
-      //   border-color: transparent;
-      // }
+      &:hover {
+        background-color: $text-primary;
+        color: $text-secondary;
+      }
+
+      &.active {
+        color: $text-primary;
+        font-weight: 700;
+
+        &:hover {
+          background-color: $text-primary;
+          color: $text-secondary;
+        }
+      }
 
       i {
         margin-right: 10px;
